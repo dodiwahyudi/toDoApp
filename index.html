@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+      .container {
+        height: 600px;
+        width : 100%;
+        background-image: linear-gradient(to right, rgba(10, 10, 10, 0.815), rgba(10, 10, 10, 0.973)),
+                          url("https://c.pxhere.com/images/bd/bb/107ad8db33923387750a1bf0edfc-1448701.jpg!d");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      h1 {
+        color: whitesmoke;
+        }
+      
+      p {
+        color: whitesmoke;
+        font-size: 20px;
+      }
+
+      #inputanAwal {
+        height: 40px;
+        width: 400px;
+        border-radius: 10px;
+      }
+
+      #buttonAdd {
+        height: 45px;
+        width : 100px;
+        border-radius: 10px;
+      }
+      #buttonRemove {
+        height: 45px;
+        width : 100px;
+        border-radius: 10px;
+      }
+
+      .containerText{
+        border-style: dotted;
+        border-color: azure;
+      } 
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>To do App</h1>
+  <form>
+  <input type="text" id="inputanAwal" placeholder="Enter your list to do..">
+  <input type="button" id="buttonAdd" value="Add" onclick="tambahList()">
+  <input type="button" id="buttonRemove" value="Remove" onclick="deleteList()">
+  </form>
+
+  <div id="inputan"></div>
+
+</div>
+
+
+<script>
+    function tambahList(){
+      let textDiv = document.getElementById("inputan")
+      let inputanText = document.getElementById("inputanAwal").value
+
+      let tambahElement = document.createElement("p")
+      tambahElement.setAttribute("class", "pList")
+
+      let valueText = document.createTextNode(inputanText)
+
+      tambahElement.appendChild(valueText)
+      textDiv.appendChild(tambahElement)
+      
+      inputanAwal.value = ""
+    }
+
+    function deleteList(){
+
+      let isiP = document.querySelector(".pList")
+
+      isiP.parentNode.removeChild(isiP)
+     
+    }
+
+</script>
+</body>
+</html>
