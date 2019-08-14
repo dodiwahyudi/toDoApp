@@ -56,9 +56,8 @@
 
   <h1>To do App</h1>
   <form>
-  <input type="text" id="inputanAwal" placeholder="Enter your list to do..">
+  <input type="text" id="inputanAwal" autocomplete="off" placeholder="Enter your list to do..">
   <input type="button" id="buttonAdd" value="Add" onclick="tambahList()">
-  <input type="button" id="buttonRemove" value="Remove" onclick="deleteList()">
   </form>
 
   <div id="inputan"></div>
@@ -82,13 +81,13 @@
       inputanAwal.value = ""
     }
 
-    function deleteList(){
 
-      let isiP = document.querySelector(".pList")
+    document.getElementById("inputan").addEventListener("click",function(e){
+      e.target.remove();
+    })
 
-      isiP.parentNode.removeChild(isiP)
      
-    }
+    
 
 </script>
 </body>
